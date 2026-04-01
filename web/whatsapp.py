@@ -141,7 +141,7 @@ class BrowseWhatsApp(Browser):
         self.wait(1)
      
         # Search for contact
-        self.element(By.XPATH, '//div[@aria-placeholder="Search name or number"]')
+        self.element(By.XPATH, '//input[@placeholder="Search name or number"]')
         self.clear()
      
         self.input(phonenumber)
@@ -187,4 +187,4 @@ class BrowseWhatsApp(Browser):
         Returns:
             True if logged in, False otherwise
         """
-        return not self.findElement('label', 'stay logged in').isSet
+        return 'Log in with phone number' not in self.html
